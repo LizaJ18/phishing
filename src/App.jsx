@@ -1,23 +1,10 @@
-import logo from "./assets/icons/logo.svg";
-import profile from "./assets/icons/profile.png";
 import za from "./assets/icons/zachan.jpg";
+import NavBar from "./components/NavBar";
 
 function App() {
   return (
     <div>
-      {/* navigation bar*/}
-      <nav className="flex items-center justify-between px-[50px] py-[15px] border-b-2 bg-white border-black shadow-xl sticky top-0">
-        <div className="flex items-center">
-          <img className="w-[50px]" src={logo} />
-
-          <h1 className="text-4xl font-semibold italic ml-5">My CV Resume</h1>
-        </div>
-        <div className="flex items-center font-semibold">
-          <h2 className="m-4 ">LOG IN</h2>
-          <h3 className="m-4">CREATE ACCOUNT</h3>
-          <img className="w-[50px]" src={profile} />
-        </div>
-      </nav>
+      <NavBar />
       {/* self intro div*/}
       <div className="flex items-center justify-center p-[40px] px-[30px] pt-[90px] ">
         <div className="pl-[60px]">
@@ -57,30 +44,9 @@ function App() {
           Experience
         </h1>
         <div className="flex item-center justify-between px-[100px] py-[80px] bg-[#562828] text-white">
-          <div>
-            <h1 className="text-[30px]">2019-2020</h1>
-            <p className="w-[350px] text-[20px]">
-              experience in computer engineer Lorem ipsum dolor sit amet
-              consectetur adipisicing elit. Maiores, enim perferendis
-              recusandae.
-            </p>
-          </div>
-          <div>
-            <h1 className="text-[30px]">2019-2020</h1>
-            <p className="w-[350px] text-[20px]">
-              experience in computer engineer Lorem ipsum dolor sit amet
-              consectetur adipisicing elit. Maiores, enim perferendis
-              recusandae.
-            </p>
-          </div>
-          <div>
-            <h1 className="text-[30px]">2019-2020</h1>
-            <p className="w-[350px] text-[20px]">
-              experience in computer engineer Lorem ipsum dolor sit amet
-              consectetur adipisicing elit. Maiores, enim perferendis
-              recusandae.
-            </p>
-          </div>
+          <ExperienceCard />
+          <ExperienceCard />
+          <ExperienceCard />
         </div>
       </div>
 
@@ -192,6 +158,19 @@ function App() {
       </div>
     </div>
   );
+}
+
+const ExperienceCard = () => {
+  return (
+    <div>
+      <h1 className="text-[30px]">2019-2020</h1>
+      <p className="w-[350px] text-[20px]">
+        experience in computer engineer Lorem ipsum dolor sit amet
+        consectetur adipisicing elit. Maiores, enim perferendis
+        recusandae.
+      </p>
+    </div>
+  )
 }
 
 export default App;
