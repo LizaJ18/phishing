@@ -18,9 +18,9 @@ export default function Login({ modalOpen, setModalOpen }) {
   const { login, isLogin, authErrors } = useAuthContext()
   console.log(authErrors)
   return (
-    <ModalSample modalOpen={modalOpen} setModalOpen={setModalOpen} className={'flex flex-col justify-center bg-[#8C8ED2] text-white rounded-[40px] px-12 py-6 w-[25%] h-[40%]'}>
+    <ModalSample modalOpen={modalOpen} setModalOpen={setModalOpen} className={'flex flex-col justify-center bg-[#8C8ED2] text-white rounded-[40px] px-12 py-6 w-[25%] h-max'}>
       <div className='p-4'>
-        <p className='text-center font-semibold italic'>Login to view Liza Chan&apos;s CV</p>
+        <p className='text-center font-semibold italic'>Login to view Liza Chan&apos;s Project</p>
       </div>
       <Formik
         validationSchema={LoginSchema}

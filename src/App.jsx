@@ -1,7 +1,10 @@
 import za from "./assets/icons/zachan.jpg";
 import NavBar from "./components/NavBar";
+import { useAuthContext } from "./context/AuthContext";
+import Login from "./views/Login";
 
 function App() {
+  const { setLoginModalOpen, loginModalOpen } = useAuthContext();
   return (
     <div>
       <NavBar />
@@ -136,23 +139,32 @@ function App() {
             <div className="flex items-center justify-between text-[35px]">
               <div className="pr-[60px] pl-[25px] pt-[25px] pb-[190px] bg-[#FF8C8C] rounded-tl-[40px]">
                 <h1>CADT CANTEEN WEB DESIGN</h1>
-                <p1 className="text-[20px]">View More</p1>
+                <button onClick={(event) => {
+                  event.stopPropagation()
+                  setLoginModalOpen(true)}} className="text-[20px]">View More</button>
               </div>
               <div className="pl-[25px] pt-[25px] pb-[190px] bg-[#562828] text-white">
                 <h1>CAMTECH WEB MINI GAME DESIGN</h1>
-                <p1 className="text-[20px]">View More</p1>
+                <button onClick={(event) => {
+                  event.stopPropagation()
+                  setLoginModalOpen(true)}} className="text-[20px]">View More</button>
               </div>
             </div>
             <div className="flex items-center justify-between text-[35px]">
               <div className="pr-[60px] pl-[25px] pt-[25px] pb-[190px] bg-[#562828] rounded-bl-[40px] text-white">
                 <h1>CADT CANTEEN WEB DESIGN</h1>
-                <p1 className="text-[20px]">View More</p1>
+                <button onClick={(event) => {
+                  event.stopPropagation()
+                  setLoginModalOpen(true)}} className="text-[20px]">View More</button>
               </div>
               <div className="pl-[25px] pt-[25px] pb-[190px] bg-[#FF8C8C]">
                 <h1>CAMTECH WEB MINI GAME DESIGN</h1>
-                <p1 className="text-[20px]">View More</p1>
+                <button onClick={(event) => {
+                  event.stopPropagation()
+                  setLoginModalOpen(true)}} className="text-[20px]">View More</button>
               </div>
             </div>
+            {/* <Login modalOpen={loginModalOpen} setLoginModalOpen={setLoginModalOpen}/> */}
           </div>
         </div>
       </div>
