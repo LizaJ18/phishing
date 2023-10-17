@@ -21,11 +21,11 @@ export default function NavBar() {
           setLoginModalOpen(true)
         }} className="m-4 ">LOG IN</button>
         <Login modalOpen={loginModalOpen} setModalOpen={setLoginModalOpen}/>
-        <button onClick={(event) => {
+        {/* <button onClick={(event) => {
           event.stopPropagation()
           setRegisterModalOpen(true)
         }} className="m-4">CREATE ACCOUNT</button>
-        <Register modalOpen={registerModalOpen} setModalOpen={setRegisterModalOpen} />
+        <Register modalOpen={registerModalOpen} setModalOpen={setRegisterModalOpen} /> */}
         <img className="w-[50px]" src={profile} />
       </div>
     </nav >
