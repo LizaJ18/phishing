@@ -47,9 +47,22 @@ function App() {
           Experience
         </h1>
         <div className="flex item-center justify-between px-[100px] py-[80px] bg-[#013567] text-white">
-          <ExperienceCard workYear={"2018-2019"} desc={"Work with Khmer Tech in designing software applications and web-base platform"} />
-          <ExperienceCard workYear={"2020-2021"} desc={"Head Manager of Design Team at Siem Reap Tech Company, work as design coordinator and project manager"}/>
-          <ExperienceCard workYear={"2021-2023"} desc={"become senior design manager at Battambong Techko"}/>
+          <ExperienceCard
+            workYear={"2018-2019"}
+            desc={
+              "Work with Khmer Tech in designing software applications and web-base platform"
+            }
+          />
+          <ExperienceCard
+            workYear={"2020-2021"}
+            desc={
+              "Head Manager of Design Team at Siem Reap Tech Company, work as design coordinator and project manager"
+            }
+          />
+          <ExperienceCard
+            workYear={"2021-2023"}
+            desc={"become senior design manager at Battambong Techko"}
+          />
         </div>
       </div>
 
@@ -139,53 +152,21 @@ function App() {
             <div className="flex items-center justify-between text-[35px]">
               <div className="pr-[60px] pl-[25px] pt-[25px] pb-[190px] bg-[#2DB2EB] text-white rounded-tl-[40px]">
                 <h1>CADT CANTEEN WEB DESIGN</h1>
-                <button
-                  onClick={(event) => {
-                    event.stopPropagation();
-                    setLoginModalOpen(true);
-                  }}
-                  className="text-[20px]"
-                >
-                  View More
-                </button>
+                  <ViewMoreBtn setLoginModalOpen={setLoginModalOpen} />
               </div>
               <div className="pl-[25px] pt-[25px] pb-[190px] bg-[#2DB2EB] text-white">
                 <h1>CAMTECH WEB MINI GAME DESIGN</h1>
-                <button
-                  onClick={(event) => {
-                    event.stopPropagation();
-                    setLoginModalOpen(true);
-                  }}
-                  className="text-[20px]"
-                >
-                  View More
-                </button>
+                <ViewMoreBtn setLoginModalOpen={setLoginModalOpen} />
               </div>
             </div>
             <div className="flex items-center justify-between text-[35px]">
               <div className="pr-[60px] pl-[25px] pt-[25px] pb-[190px] bg-[#013567] rounded-bl-[40px] text-white">
                 <h1>CADT CANTEEN WEB DESIGN</h1>
-                <button
-                  onClick={(event) => {
-                    event.stopPropagation();
-                    setLoginModalOpen(true);
-                  }}
-                  className="text-[20px]"
-                >
-                  View More
-                </button>
+                <ViewMoreBtn setLoginModalOpen={setLoginModalOpen} />
               </div>
               <div className="pl-[25px] pt-[25px] pb-[190px] bg-[#013567] text-white">
                 <h1>CAMTECH WEB MINI GAME DESIGN</h1>
-                <button
-                  onClick={(event) => {
-                    event.stopPropagation();
-                    setLoginModalOpen(true);
-                  }}
-                  className="text-[20px]"
-                >
-                  View More
-                </button>
+                <ViewMoreBtn setLoginModalOpen={setLoginModalOpen} />
               </div>
             </div>
             {/* <Login modalOpen={loginModalOpen} setLoginModalOpen={setLoginModalOpen}/> */}
@@ -193,23 +174,29 @@ function App() {
         </div>
       </div>
 
-      <div>
-        
-      </div>
+      <div></div>
     </div>
   );
 }
 
-
-
-
-const ExperienceCard = ({workYear, desc }) => {
+const ViewMoreBtn = ({ setLoginModalOpen }) => {
+  return (
+    <button
+      onClick={(event) => {
+        event.stopPropagation();
+        setLoginModalOpen(true);
+      }}
+      className={"hover:underline hover:underline-offset-2 text-[20px]"}
+    >
+      View More
+    </button>
+  );
+};
+const ExperienceCard = ({ workYear, desc }) => {
   return (
     <div>
       <h1 className="text-[30px]">{workYear}</h1>
-      <p className="w-[350px] text-[20px]">
-        {desc}
-      </p>
+      <p className="w-[350px] text-[20px]">{desc}</p>
     </div>
   );
 };

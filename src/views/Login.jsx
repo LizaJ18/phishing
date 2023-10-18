@@ -63,18 +63,11 @@ export default function Login({ modalOpen, setModalOpen }) {
               })}
             </div>
             <div className='flex justify-between'>
-              <p className='italic'>Forget password?</p>
-              <button disabled={isLogin} className='bg-[#FFD600] text-black px-12 py-2 rounded-[40px] italic font-semibold'>
+              <p className='italic hover:underline hover:underline-offset-2'>Forget password?</p>
+              <button disabled={isLogin} className={`${isLogin && "bg-[#FADF00]"} transition duration-200 hover:bg-[#FFDF00] bg-[#FFD600] text-black px-12 py-2 rounded-[40px] italic font-semibold`}>
                 {isLogin ? 'Login...' : 'Login'}
               </button>
             </div>
-            {/* <div className='flex justify-between'>
-              <p>Or Sign up with</p>
-              <div className='flex items-center'>
-                <img src={ig} alt="" className='object-cover w-10 h-10' />
-                <img src={twt} alt="" className='object-cover w-12 h-12' />
-              </div>
-            </div> */}
           </form>
         )}
       </Formik>
