@@ -68,13 +68,13 @@ export default function Login({ modalOpen, setModalOpen }) {
                 {isLogin ? 'Login...' : 'Login'}
               </button>
             </div>
-            <div className='flex justify-between'>
+            {/* <div className='flex justify-between'>
               <p>Or Sign up with</p>
               <div className='flex items-center'>
                 <img src={ig} alt="" className='object-cover w-10 h-10' />
                 <img src={twt} alt="" className='object-cover w-12 h-12' />
               </div>
-            </div>
+            </div> */}
           </form>
         )}
       </Formik>
