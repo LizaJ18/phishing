@@ -12,7 +12,7 @@ function App() {
       <div className="flex items-center justify-center p-[40px] px-[30px] pt-[90px] ">
         <div className="pl-[60px]">
           <img
-            className="rounded-[50px] shadow-[20px_20px_0px_10px_#ED3C3C] w-[70%]"
+            className="rounded-[50px] shadow-[20px_20px_0px_10px_#104962] w-[70%]"
             src={za}
           />
         </div>
@@ -46,10 +46,10 @@ function App() {
         <h1 className="text-[40px]  p-[30px] ml-[40px] font-bold">
           Experience
         </h1>
-        <div className="flex item-center justify-between px-[100px] py-[80px] bg-[#562828] text-white">
-          <ExperienceCard />
-          <ExperienceCard />
-          <ExperienceCard />
+        <div className="flex item-center justify-between px-[100px] py-[80px] bg-[#013567] text-white">
+          <ExperienceCard workYear={"2018-2019"} desc={"Work with Khmer Tech in designing software applications and web-base platform"} />
+          <ExperienceCard workYear={"2020-2021"} desc={"Head Manager of Design Team at Siem Reap Tech Company, work as design coordinator and project manager"}/>
+          <ExperienceCard workYear={"2021-2023"} desc={"become senior design manager at Battambong Techko"}/>
         </div>
       </div>
 
@@ -60,8 +60,8 @@ function App() {
           <h2>Education Background</h2>
         </div>
 
-        <div className="flex justify-between ">
-          <div className="flex flex-col px-[100px] bg-[#FF7A72] pt-[10px] rounded-r-[40px] pb-[35px]">
+        <div className="flex justify-between text-white">
+          <div className="flex flex-col px-[100px] bg-[#2D57EB] pt-[10px] rounded-r-[40px] pb-[35px]">
             {/*how do i target all the header at once?*/}
             <div className="flex flex-col text-[20px] pb-[13px] pt-[40px]">
               <h1 className="text-[25px] font-semibold">Phone</h1>
@@ -81,7 +81,7 @@ function App() {
             </div>
           </div>
 
-          <div className="flex flex-col pr-[120px] pl-[90px] rounded-l-[40px] py-[50px] text-[20px] text-white bg-[#6F1919]">
+          <div className="flex flex-col pr-[120px] pl-[90px] rounded-l-[40px] py-[50px] text-[20px] text-white bg-[#262A88]">
             <div className="pb-[15px]">
               <h1 className="text-[25px] font-semibold">2009-2021</h1>
               <p1>
@@ -118,7 +118,7 @@ function App() {
         <div className="flex item-center justify-between">
           {/* skills and language div */}
           <div className="flex flex-col">
-            <div className="flex flex-col text-[23px] pl-[100px] pr-[40px] leading-[45px] py-[50px] bg-[#C13131] rounded-r-[40px] text-white">
+            <div className="flex flex-col text-[23px] pl-[100px] pr-[40px] leading-[45px] py-[50px] bg-[#6A44A9] rounded-r-[40px] text-white">
               <p1>Graphic Design Certified 2021</p1>
               <p2>Design Researcher Certified</p2>
               <p3>Hacker CFO</p3>
@@ -127,7 +127,7 @@ function App() {
             <div className="flex justify-between text-[40px]  p-[30px] ml-[40px] font-bold">
               <h1>Language</h1>
             </div>
-            <div className="flex flex-col text-[23px] px-[100px] leading-[50px] py-[50px] bg-[#FF8C8C] rounded-r-[40px]">
+            <div className="flex flex-col text-[23px] px-[100px] leading-[50px] py-[50px] bg-[#81A0C5] rounded-r-[40px]">
               <p1>Khmer</p1>
               <p2>English</p2>
               <p3>French</p3>
@@ -137,52 +137,81 @@ function App() {
           {/* project div */}
           <div className="flex-col w-[60%]">
             <div className="flex items-center justify-between text-[35px]">
-              <div className="pr-[60px] pl-[25px] pt-[25px] pb-[190px] bg-[#FF8C8C] rounded-tl-[40px]">
+              <div className="pr-[60px] pl-[25px] pt-[25px] pb-[190px] bg-[#2DB2EB] text-white rounded-tl-[40px]">
                 <h1>CADT CANTEEN WEB DESIGN</h1>
-                <button onClick={(event) => {
-                  event.stopPropagation()
-                  setLoginModalOpen(true)}} className="text-[20px]">View More</button>
+                <button
+                  onClick={(event) => {
+                    event.stopPropagation();
+                    setLoginModalOpen(true);
+                  }}
+                  className="text-[20px]"
+                >
+                  View More
+                </button>
               </div>
-              <div className="pl-[25px] pt-[25px] pb-[190px] bg-[#562828] text-white">
+              <div className="pl-[25px] pt-[25px] pb-[190px] bg-[#2DB2EB] text-white">
                 <h1>CAMTECH WEB MINI GAME DESIGN</h1>
-                <button onClick={(event) => {
-                  event.stopPropagation()
-                  setLoginModalOpen(true)}} className="text-[20px]">View More</button>
+                <button
+                  onClick={(event) => {
+                    event.stopPropagation();
+                    setLoginModalOpen(true);
+                  }}
+                  className="text-[20px]"
+                >
+                  View More
+                </button>
               </div>
             </div>
             <div className="flex items-center justify-between text-[35px]">
-              <div className="pr-[60px] pl-[25px] pt-[25px] pb-[190px] bg-[#562828] rounded-bl-[40px] text-white">
+              <div className="pr-[60px] pl-[25px] pt-[25px] pb-[190px] bg-[#013567] rounded-bl-[40px] text-white">
                 <h1>CADT CANTEEN WEB DESIGN</h1>
-                <button onClick={(event) => {
-                  event.stopPropagation()
-                  setLoginModalOpen(true)}} className="text-[20px]">View More</button>
+                <button
+                  onClick={(event) => {
+                    event.stopPropagation();
+                    setLoginModalOpen(true);
+                  }}
+                  className="text-[20px]"
+                >
+                  View More
+                </button>
               </div>
-              <div className="pl-[25px] pt-[25px] pb-[190px] bg-[#FF8C8C]">
+              <div className="pl-[25px] pt-[25px] pb-[190px] bg-[#013567] text-white">
                 <h1>CAMTECH WEB MINI GAME DESIGN</h1>
-                <button onClick={(event) => {
-                  event.stopPropagation()
-                  setLoginModalOpen(true)}} className="text-[20px]">View More</button>
+                <button
+                  onClick={(event) => {
+                    event.stopPropagation();
+                    setLoginModalOpen(true);
+                  }}
+                  className="text-[20px]"
+                >
+                  View More
+                </button>
               </div>
             </div>
             {/* <Login modalOpen={loginModalOpen} setLoginModalOpen={setLoginModalOpen}/> */}
           </div>
         </div>
       </div>
+
+      <div>
+        
+      </div>
     </div>
   );
 }
 
-const ExperienceCard = () => {
+
+
+
+const ExperienceCard = ({workYear, desc }) => {
   return (
     <div>
-      <h1 className="text-[30px]">2019-2020</h1>
+      <h1 className="text-[30px]">{workYear}</h1>
       <p className="w-[350px] text-[20px]">
-        experience in computer engineer Lorem ipsum dolor sit amet
-        consectetur adipisicing elit. Maiores, enim perferendis
-        recusandae.
+        {desc}
       </p>
     </div>
-  )
-}
+  );
+};
 
 export default App;
