@@ -2,6 +2,7 @@ import za from "./assets/icons/zachan.jpg";
 import NavBar from "./components/NavBar";
 import { useAuthContext } from "./context/AuthContext";
 import Login from "./views/Login";
+import logi from "./assets/icons/footerlogo.svg";
 
 function App() {
   const { setLoginModalOpen, loginModalOpen } = useAuthContext();
@@ -61,7 +62,7 @@ function App() {
         </div>
 
         <div className="flex justify-between text-white">
-          <div className="flex flex-col px-[100px] bg-[#2D57EB] pt-[10px] rounded-r-[40px] pb-[35px]">
+          <div className="flex flex-col px-[100px] bg-[#2D57EB] pt-[10px] rounded-r-[40px] pb-[35px] shadow-[10px_13px_0px_10px_#262A88]">
             {/*how do i target all the header at once?*/}
             <div className="flex flex-col text-[20px] pb-[13px] pt-[40px]">
               <h1 className="text-[25px] font-semibold">Phone</h1>
@@ -118,7 +119,7 @@ function App() {
         <div className="flex item-center justify-between">
           {/* skills and language div */}
           <div className="flex flex-col">
-            <div className="flex flex-col text-[23px] pl-[100px] pr-[40px] leading-[45px] py-[50px] bg-[#6A44A9] rounded-r-[40px] text-white">
+            <div className="flex flex-col text-[23px] font-semibold pl-[100px] pr-[40px] leading-[45px] py-[50px] bg-[#6A44A9] rounded-r-[40px] text-white shadow-[10px_13px_0px_10px_#104962]">
               <p1>Graphic Design Certified 2021</p1>
               <p2>Design Researcher Certified</p2>
               <p3>Hacker CFO</p3>
@@ -127,7 +128,7 @@ function App() {
             <div className="flex justify-between text-[40px]  p-[30px] ml-[40px] font-bold">
               <h1>Language</h1>
             </div>
-            <div className="flex flex-col text-[23px] px-[100px] leading-[50px] py-[50px] bg-[#81A0C5] rounded-r-[40px]">
+            <div className="flex flex-col text-[23px] font-semibold text-white px-[100px] leading-[50px] py-[50px] bg-[#81A0C5] rounded-r-[40px] shadow-[10px_13px_0px_10px_#013567]">
               <p1>Khmer</p1>
               <p2>English</p2>
               <p3>French</p3>
@@ -193,8 +194,26 @@ function App() {
         </div>
       </div>
 
-      <div>
+      <div className="flex bg-[#20007B] mt-[40px] justify-between">
+        <div className="flex flex-col text-[35px] text-white font-semibold pl-[60px]">
+          <div className="pt-[30px] pb-[25px] text-[#FFD600]"><h1>My CV Resume</h1></div>
         
+        <div className="text-[20px] pb-[40px]">
+          <p>Start Creating Your CV now!</p>
+          <p>Create Accounts</p>
+          <p>Login</p>
+          <p>Follow us!</p>
+        </div>
+        </div>
+        <div className=" text-white font-semibold pl-[60px] text-[20px] pb-[40px] pt-[100px]">
+          <p>Lok Kru trov Phish</p>
+          <p>Learn to create phishing cv</p>
+          <p>Login</p>
+          <p>Follow us!</p>
+        </div>
+        <div className="p-[50px]">
+        <img className="w-[175px]" src={logi} /> 
+        </div>
       </div>
     </div>
   );
