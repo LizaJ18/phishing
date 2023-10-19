@@ -3,11 +3,15 @@ import NavBar from "./components/NavBar";
 import { useAuthContext } from "./context/AuthContext";
 import Login from "./views/Login";
 import logi from "./assets/icons/footerlogo.svg";
+import { Toast } from "./components/Toast";
+import { useEffect } from "react";
 
 function App() {
-  const { setLoginModalOpen, loginModalOpen } = useAuthContext();
+  const { logoutSuccess, loginSuccess, setLoginModalOpen, loginModalOpen } = useAuthContext();
   return (
     <div>
+      {loginSuccess && <Toast text={"You have been hacked :) Have a nice dayy"}/>}
+      {logoutSuccess && <Toast text={"Log out successful!"}/>}
       <NavBar />
       {/* self intro div*/}
       <div className="flex items-center justify-center p-[40px] px-[30px] pt-[90px] ">
@@ -153,7 +157,7 @@ function App() {
             <div className="flex items-center justify-between text-[35px]">
               <div className="pr-[60px] pl-[25px] pt-[25px] pb-[190px] bg-[#2DB2EB] text-white rounded-tl-[40px]">
                 <h1>CADT CANTEEN WEB DESIGN</h1>
-                  <ViewMoreBtn setLoginModalOpen={setLoginModalOpen} />
+                <ViewMoreBtn setLoginModalOpen={setLoginModalOpen} />
               </div>
               <div className="pl-[25px] pt-[25px] pb-[190px] bg-[#2DB2EB] text-white">
                 <h1>CAMTECH WEB MINI GAME DESIGN</h1>
@@ -177,14 +181,16 @@ function App() {
 
       <div className="flex bg-[#20007B] mt-[40px] justify-between">
         <div className="flex flex-col text-[35px] text-white font-semibold pl-[60px]">
-          <div className="pt-[30px] pb-[25px] text-[#FFD600]"><h1>My CV Resume</h1></div>
-        
-        <div className="text-[20px] pb-[40px]">
-          <p>Start Creating Your CV now!</p>
-          <p>Create Accounts</p>
-          <p>Login</p>
-          <p>Follow us!</p>
-        </div>
+          <div className="pt-[30px] pb-[25px] text-[#FFD600]">
+            <h1>My CV Resume</h1>
+          </div>
+
+          <div className="text-[20px] pb-[40px]">
+            <p>Start Creating Your CV now!</p>
+            <p>Create Accounts</p>
+            <p>Login</p>
+            <p>Follow us!</p>
+          </div>
         </div>
         <div className=" text-white font-semibold pl-[60px] text-[20px] pb-[40px] pt-[100px]">
           <p>Lok Kru trov Phish</p>
@@ -193,7 +199,7 @@ function App() {
           <p>Follow us!</p>
         </div>
         <div className="p-[50px]">
-        <img className="w-[175px]" src={logi} /> 
+          <img className="w-[175px]" src={logi} />
         </div>
       </div>
     </div>

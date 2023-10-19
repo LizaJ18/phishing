@@ -10,6 +10,8 @@ export const AuthContext = ({ children }) => {
   const [authErrors, setAuthErrors] = useState([])
   const [isRegister, setIsRegister] = useState(false)
   const [isLogin, setIsLogin] = useState(false)
+  const [loginSuccess, setLoginSuccess]  = useState(false)
+  const [logoutSuccess, setLogoutSuccess]  = useState(false)
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("USER")) || {})
   const register = async (user, resetForm) => {
     const { firstname, lastname, email, password } = user
@@ -37,6 +39,7 @@ export const AuthContext = ({ children }) => {
 
   const logout = () => {
     localStorage.removeItem("USER");
+    setLogoutSuccess(true)
     setUser({})
   }
 
@@ -51,6 +54,7 @@ export const AuthContext = ({ children }) => {
       console.log(res)
       if (res?.data.status === 200) {
         saveUser(res?.data.user)
+        setLoginSuccess(true)
         resetForm()
         setModalOpen(false)
         setAuthErrors([])
@@ -65,7 +69,7 @@ export const AuthContext = ({ children }) => {
   
 
   return (
-    <StateContext.Provider value={{ logout, setUser, user, register, authErrors, login, registerModalOpen, setRegisterModalOpen, loginModalOpen, setLoginModalOpen, isRegister, isLogin }}>
+    <StateContext.Provider value={{ logoutSuccess, setLogoutSuccess, loginSuccess, setLoginSuccess, logout, setUser, user, register, authErrors, login, registerModalOpen, setRegisterModalOpen, loginModalOpen, setLoginModalOpen, isRegister, isLogin }}>
       {children}
     </StateContext.Provider>
   )
