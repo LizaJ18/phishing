@@ -10,7 +10,9 @@ export const AuthContext = ({ children }) => {
   const [authErrors, setAuthErrors] = useState([])
   const [isRegister, setIsRegister] = useState(false)
   const [isLogin, setIsLogin] = useState(false)
-
+  const [loginSuccess, setLoginSuccess]  = useState(false)
+  const [logoutSuccess, setLogoutSuccess]  = useState(false)
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem("USER")) || {})
   const register = async (user, resetForm) => {
     const { firstname, lastname, email, password } = user
     setIsRegister(true)
@@ -30,6 +32,17 @@ export const AuthContext = ({ children }) => {
     setIsRegister(false)
   }
 
+  const saveUser = (user) => {
+    localStorage.setItem("USER", JSON.stringify(user)) 
+    setUser(user)
+  }
+
+  const logout = () => {
+    localStorage.removeItem("USER");
+    setLogoutSuccess(true)
+    setUser({})
+  }
+
   const login = async (user, resetForm, setModalOpen) => {
     const { email, password } = user
     setIsLogin(true)
@@ -40,19 +53,27 @@ export const AuthContext = ({ children }) => {
     }).then(res => {
       console.log(res)
       if (res?.data.status === 200) {
+        saveUser(res?.data.user)
+        setLoginSuccess(true)
         resetForm()
         setModalOpen(false)
         setAuthErrors([])
       }
     }).catch(err => {
       console.log(err)
+      if(err.message === "Network Error") {
+        setIsLogin(false)
+        setAuthErrors([...authErrors, err.message])
+      }
       setAuthErrors([err.response.data])
     })
     setIsLogin(false)
   }
 
+  
+
   return (
-    <StateContext.Provider value={{ register, authErrors, login, registerModalOpen, setRegisterModalOpen, loginModalOpen, setLoginModalOpen, isRegister, isLogin }}>
+    <StateContext.Provider value={{ logoutSuccess, setLogoutSuccess, loginSuccess, setLoginSuccess, logout, setUser, user, register, authErrors, login, registerModalOpen, setRegisterModalOpen, loginModalOpen, setLoginModalOpen, isRegister, isLogin }}>
       {children}
     </StateContext.Provider>
   )
