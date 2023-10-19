@@ -61,6 +61,10 @@ export const AuthContext = ({ children }) => {
       }
     }).catch(err => {
       console.log(err)
+      if(err.message === "Network Error") {
+        setIsLogin(false)
+        setAuthErrors([...authErrors, err.message])
+      }
       setAuthErrors([err.response.data])
     })
     setIsLogin(false)

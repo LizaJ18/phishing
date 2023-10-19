@@ -57,7 +57,7 @@ export default function Login({ modalOpen, setModalOpen }) {
               {authErrors?.map((err, key) => {
                 return (
                   <div key={key} className='text-sm text-red-200 italic'>
-                    {err.message}
+                    {err.message || err}
                   </div>
                 )
               })}
